@@ -1,0 +1,305 @@
+h1, h2, h3 {
+    font-family: 'Alice', serif;
+}
+
+
+
+body header, body .navbar, body footer {
+    background-color: #191919 !important;
+    font-family: 'Averia Serif Libre', serif;
+
+}
+
+
+#main-header, #main-footer {
+    background-color: #191919 !important;
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #DFE0DF;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #191919;
+    color: white;
+}
+header img {
+    height: 50px;
+}
+header, .navbar, footer {
+    background-color: #191919 !important;
+}
+
+.navbar {
+    background-color: #191919 !important;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    background-color: #191919;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s, transform 0.3s;
+    }
+
+
+nav a:hover {
+    color: #5D4300 ;
+    transform: scale(1.1);
+
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background-color: #CCAD60;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+nav .button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #CCAD60;
+    color: #402E32;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+nav-bar {
+    background-color: #191919 !important;
+}
+
+nav .btn-warning {
+    background-color: #CCAD60 !important;
+    color: white;
+    transition: background-color 0.3s;
+
+}
+
+nav .btn-warning:hover {
+    background-color: #402E32;
+    color: white;
+}
+.hero {
+    background: url('images/hero.jpg') no-repeat center center/cover;
+    height: 100%;
+    /* max-height: 300px; */
+    width: 100%;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 36px;
+    font-weight: bold;
+}
+.services {
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #5D4300;
+}
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding: 20px;
+}
+.carousel {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s;
+}
+.carousel-item {
+    min-width: 300px;
+    background-color: #CCAD60;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: #402E32;
+}
+.carousel-item button {
+    margin-top: 10px;
+    padding: 5px 15px;
+    border: none;
+    background-color: #402E32;
+    color: #DFE0DF;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    background-color: #5D4300;
+    color: white;
+}
+.newsletter input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+}
+.newsletter button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #CCAD60;
+    color: #402E32;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+footer {
+    background-color: #191919 !important;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+footer a {
+    text-decoration: none;
+    color: #CCAD60;
+    margin: 0 10px;
+}
+
+
+
+/* Login page style */
+.login-page {
+    background: url('images/login_bg.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.login-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    background: #dfe0df; /* Slightly transparent white */
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.login-container .input-group {
+    margin-bottom: 15px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 5px;
+    border: 1px solid #dfe0df;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.login-container input:focus {
+    border-color: #402e32; /* Highlighted input */
+}
+
+.login-container button {
+    width: 100%;
+    max-width: fit-content;
+    padding: 10px;
+    background: #ccad60;
+    color: #dfe0df;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-container button:hover {
+    background: #402e32; /* Darker blue on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+    
+}
