@@ -126,29 +126,40 @@ nav .btn-warning:hover {
     justify-content: center;
     overflow: hidden;
     padding: 20px;
+    background-color: #CCAD60;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    align-items: center;
+    margin: 0 auto;
 }
 .carousel {
-    display: flex;
-    gap: 20px;
-    transition: transform 0.5s;
+    width: 80%;
+    overflow: hidden;
+
 }
 .carousel-item {
-    min-width: 300px;
+    width: 80%;
+    flex: none;
     background-color: #CCAD60;
     border-radius: 10px;
     padding: 20px;
-    text-align: center;
     color: #402E32;
 }
 .carousel-item button {
-    margin-top: 10px;
-    padding: 5px 15px;
-    border: none;
-    background-color: #402E32;
-    color: #DFE0DF;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
+        margin-top: 10px;
+        padding: 5px 15px;
+        border: none;
+        background-color: #402E32;
+        color: #DFE0DF;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+}
+.carousel-item button:hover {
+    background-color: #ffffff; /* Matches the newsletter hover background */
+    color: #402E32; /* Matches the newsletter hover text color */
 }
 .newsletter {
     display: flex;
@@ -159,12 +170,22 @@ nav .btn-warning:hover {
     background-color: #5D4300;
     color: white;
 }
+
+.newsletter .form-group {
+    display: flex;
+    gap: 10px; /* Adds space between input and button */
+    width: 100%;
+    justify-content: center;
+}
+
 .newsletter input {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    width: 300px;
+    flex: 1; /* Makes the input take up available space */
+    max-width: 300px; /* Limits the input width */
 }
+
 .newsletter button {
     padding: 10px 20px;
     border: none;
@@ -173,7 +194,9 @@ nav .btn-warning:hover {
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
+    white-space: nowrap; /* Prevents button text wrapping */
 }
+
 footer {
     background-color: #191919 !important;
     color: white;
@@ -182,7 +205,7 @@ footer {
 }
 footer a {
     text-decoration: none;
-    color: #CCAD60;
+    color: #e2cd98;
     margin: 0 10px;
 }
 
@@ -267,12 +290,329 @@ footer a {
 
 
 
+/* ABOUT PAGE */
+/* About Page Styles */
+.about-page {
+    background: url('images/about_bg.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    color: white;
+}
+
+.about-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Slight overlay for better readability */
+    z-index: 1;
+}
+
+.about-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.about-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.about-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+
+
+/* PAPERBANK */
+/* Hero Section */
+.hero-section {
+    background: url('images/paperbank_hero.png') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero-section h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+     /* Overlay for readability */
+    z-index: 1;
+}
+
+.hero-section h1 {
+    position: relative;
+    z-index: 2;
+}
+
+/* Paper Sections */
+.paper-sections {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+.paper-section img {
+    max-width: 100%; /* Ensures the image doesn't overflow */
+    border-radius: 10px;
+    margin-bottom: 15px; /* Adds spacing between image and text */
+}
+
+.paper-section button {
+    margin-top: 10px; /* Adds spacing above the button */
+    padding: 10px 20px;
+    background-color: #CCAD60;
+    color: #402E32;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.paper-section button:hover {
+    background-color: #402E32;
+    color: #CCAD60;
+}
+
+.paper-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 900px;
+    /* background-color: #DFE0DF;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
+}
+
+.paper-block:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.paper-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    width: 250px;
+
+}
+
+.paper-content {
+
+    flex: 1;
+}
+
+.paper-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    /* color: #5D4300; */
+}
+
+.paper-content p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    /* line-height: 1.6;
+    color: #402E32; */
+}
+
+.paper-content .btn {
+    padding: 10px 20px;
+    background-color: #CCAD60;
+    color: #402E32;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.paper-content .btn:hover {
+    background-color: #402E32;
+    color: #CCAD60;
+}
+
+.paper-content .btn-primary {
+    padding: 10px 20px;
+    background-color: #CCAD60;
+    color: #402E32;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+    width: fit-content;
+}
+.paper-content .btn-primary:hover {
+    background-color: #402E32;
+    color: #DFE0DF;
+}
 
 
 
 
+/* SHOP SECTION */
+/* Hero Section */
+.hero_shop {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
 
+.hero_shop_image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
 
+.hero_shop_text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin-bottom: 60px;
+    color: #5D4300;
+}
+
+/* Shop Section */
+.shop-section {
+    padding: 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    
+}
+
+.shop-blocks {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.shop-block {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+    width: 300px;
+    text-align: left;
+    margin-top: 70px;
+}
+
+.shop-block h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.toggle-button {
+    display: block;
+    margin: 0 auto 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toggle-button:hover {
+    background-color: #0056b3;
+}
+
+/* Dropdown and Booklet Styles */
+.shop_dropdown {
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.alphabet-section {
+    margin-bottom: 20px;
+}
+
+.booklet {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.booklet img {
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.booklet-info h5 {
+    margin: 0 0 5px;
+}
+
+.booklet-info p {
+    margin: 0 0 5px;
+    font-weight: bold;
+}
+
+.booklet-info .tag {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.btn-primary {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+}
 
 
 
