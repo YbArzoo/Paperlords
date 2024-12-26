@@ -339,7 +339,7 @@ footer a {
 /* Hero Section */
 .hero-section {
     background: url('images/paperbank_hero.png') no-repeat center center/cover;
-    height: 60vh;
+    height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -520,24 +520,52 @@ footer a {
     
 }
 
-.shop-blocks {
-    display: flex;
+.shop-blocks-igcse {
+
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    align-items: center;
 }
 
-.shop-block {
+.shop-blocks-igcse {
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
-    background-color: white;
-    width: 300px;
+    background-color: #eedfb8;
+    width: 100%;
     text-align: left;
     margin-top: 70px;
+    /* align-items: center; */
+    /* align-content: center; */
+    /* justify-content: center; */
 }
 
-.shop-block h3 {
+.shop-blocks-igcse h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.shop-blocks-ial {
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.shop-blocks-ial {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #eedfb8;
+    width: 100%;
+    text-align: left;
+    margin-top: 70px;
+    /* align-items: center; */
+    /* align-content: center; */
+    /* justify-content: center; */
+}
+
+.shop-blocks-ial h3 {
     text-align: center;
     margin-bottom: 10px;
 }
@@ -546,7 +574,7 @@ footer a {
     display: block;
     margin: 0 auto 10px;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #ccad60;
     color: white;
     border: none;
     border-radius: 5px;
@@ -554,7 +582,22 @@ footer a {
 }
 
 .toggle-button:hover {
-    background-color: #0056b3;
+    background-color: #5D4300;
+}
+
+.add_cart_button {
+    display: block;
+    padding: 10px 20px;
+    background-color: #ccad60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.add_cart_button:hover {
+    background-color: #5D4300;
 }
 
 /* Dropdown and Booklet Styles */
@@ -570,16 +613,18 @@ footer a {
 
 .booklet {
     display: flex;
-    gap: 15px;
-    align-items: center;
+    gap: 35%;
+    /* align-items: center; */
     margin-bottom: 10px;
+    margin-top: 3rem;
 }
 
 .booklet img {
-    width: 80px;
-    height: 100px;
+    width: 300px;
+    height: 250px;
     object-fit: cover;
     border-radius: 5px;
+    margin-left: 20%;
 }
 
 .booklet-info h5 {
@@ -593,12 +638,13 @@ footer a {
 
 .booklet-info .tag {
     display: inline-block;
-    background-color: #007bff;
+    background-color: #402e32;
     color: white;
     padding: 2px 6px;
     border-radius: 3px;
     font-size: 0.8rem;
     margin-bottom: 5px;
+    margin-top: 20px;
 }
 
 .btn-primary {
