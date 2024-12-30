@@ -1,0 +1,170 @@
+-- Database: paperlords
+CREATE DATABASE paperlords;
+USE paperlords;
+
+-- Categories Table
+CREATE TABLE categories (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE
+);
+
+-- guest_users Table
+CREATE TABLE guest_users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255),
+    phone VARCHAR(15),
+    address TEXT
+);
+
+-- Admins Table
+CREATE TABLE admins (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('Admin', 'Printing Partner') NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Users Table
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NULL,
+    phone_number VARCHAR(20) NULL,
+    address TEXT NULL,
+    is_guest BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Products Table
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    weight DECIMAL(10, 2) NOT NULL,
+    category_id INT,
+    image_link VARCHAR(255) NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE SET NULL
+);
+
+-- Resources Table
+CREATE TABLE resources (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    type ENUM('Question Paper', 'Mark Scheme') NOT NULL,
+    category_id INT NOT NULL,
+    pdf_link TEXT NOT NULL,
+    year YEAR NOT NULL,
+    month ENUM('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December') NOT NULL,
+    subject VARCHAR(255) NOT NULL,
+    FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE
+);
+
+-- Orders Table
+CREATE TABLE orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NULL,
+    guest_user_id INT NULL,
+    total_amount DECIMAL(10, 2) NOT NULL,
+    payment_mode ENUM('Cash on Delivery', 'Online Payment') NOT NULL,
+    status ENUM('Pending', 'Completed', 'Delivered', 'Cancelled', 'Confirmed') DEFAULT 'Pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL,
+    FOREIGN KEY (guest_user_id) REFERENCES guest_users(id) ON DELETE SET NULL
+);
+
+-- Order Items Table
+CREATE TABLE order_items (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_id INT NOT NULL,
+    product_id INT NOT NULL,
+    quantity INT NOT NULL DEFAULT 1,
+    price DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
+);
+
+-- Subjects Table
+CREATE TABLE subjects (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
+
+-- Relationships for Resource Subjects
+CREATE TABLE resource_subjects (
+    resource_id INT NOT NULL,
+    subject_id INT NOT NULL,
+    PRIMARY KEY (resource_id, subject_id),
+    FOREIGN KEY (resource_id) REFERENCES resources(id) ON DELETE CASCADE,
+    FOREIGN KEY (subject_id) REFERENCES subjects(id) ON DELETE CASCADE
+);
+
+
+
+
+========================= DATA ============================
+
+INSERT INTO admins (name, email, password, role) VALUES
+('founder55', 'admin@paperlords.org', 'ilovepaperlords', 'Admin'),
+('Tanisha', 'printingpartner@paperlords.org', 'securepassword2', 'Printing Partner');
+
+
+INSERT INTO guest_users (name, email, phone, address) VALUES
+('Guest User 1', 'guest1@example.com', '9988776655', '789 Oak Road'),
+('Guest User 2', 'guest2@example.com', '8877665544', '321 Pine Street');
+
+INSERT INTO users (name, email, password, phone_number, address) VALUES
+('Mostofa', 'mostofa@gmail.com', 'password123', '0123456789', '123 Motijheel'),
+('Rafid', 'rafid@gmail.com', 'password456', '9876543210', '456 Gulshan');
+
+
+INSERT INTO orders (user_id, guest_user_id, order_date, total_amount, status) VALUES
+(1, NULL, '2023-12-25', 55.50, 'Pending'),
+(NULL, 1, '2023-12-24', 30.75, 'Completed'),
+(2, NULL, '2023-12-23', 27.00, 'Delivered');
+
+
+INSERT INTO order_items (order_id, product_id, quantity) VALUES
+(1, 1, 2),
+(2, 2, 1),
+(3, 3, 1);
+
+INSERT INTO subjects (name) VALUES
+('Physics'),
+('Chemistry'),
+('Biology'),
+('Maths B'),
+('Pure Maths');
+
+
+INSERT INTO categories (name) VALUES
+('IGCSE'),
+('IAL');
+
+
+INSERT INTO resources (name, type, category_id, pdf_link, year, month, subject)
+VALUES
+('Physics U1 Question Paper', 'Question Paper', 2, 'https://drive.google.com/file/d/1FR0ZsQJPOulYN4F_Izq2rELvUDXxZ0RJ/view?usp=sharing', 2024, 'May', 'Physics'),
+('Chemistry U2 Mark Scheme', 'Mark Scheme', 2, 'https://drive.google.com/file/d/1KRQy9EFs7_AJbg9TaioFh7S8Fn78eaLY/view?usp=sharing', 2024, 'January', 'Chemistry'),
+('Chemistry Paper 1', 'Question Paper', 1, 'https://www.dropbox.com/scl/fi/k9ip1sxetlqmbhngunj5j/4ch1-1c-que-20231115.pdf?rlkey=r6s02efsxfoto9krv4v53hhcc&dl=1', 2023, 'October', 'Chemistry'),
+('Pure Maths Paper 2', 'Mark Scheme', 1, 'https://www.dropbox.com/s/zp83d3j1zneca71/4pm1-02-rms-20230824.pdf?dl=1', 2023, 'May', 'Pure Maths');
+
+
+INSERT INTO products (name, description, price, weight, category_id, image_link) VALUES
+('IAL Chemistry Booklet', 'Detailed booklet for IAL Chemistry preparation.', 499, 1.5, '2', ''),
+('IGCSE Biology Booklet', 'IGCSE Biology booklet with extensive exercises.', 899, 1.3, '1', '');
+('IGCSE CHEMISTRY Paper 1 Booklet Part 1', 'From January 2019 to May 2024.', 639, 1.2, '1', '');
+
+
+
+INSERT INTO subjects (name) VALUES
+('Physics'),
+('Chemistry'),
+('Biology'),
+('Maths B'),
+('Pure Maths');
