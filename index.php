@@ -1,3 +1,9 @@
+<?php
+session_start(); // Start the session
+
+// Check if user is logged in
+$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null; // Safely check if user_id is set
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,13 +25,16 @@
         <img src="images/logo.png" alt="Paperlords Logo" height="50">
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="navbar-nav">
-                <a class="nav-item nav-link text-white mx-2" href="index.html">Home</a>
-                <a class="nav-item nav-link text-white mx-2" href="paperbank.html">Paper Bank</a>
-                <a class="nav-item nav-link text-white mx-2" href="about.html">About</a>
-                <a class="nav-item nav-link text-white mx-2" href="shop.html">Shop</a>
-                <a class="nav-item nav-link text-white mx-2" href="all-products.html">All Products</a>
-                <button class="btn btn-warning mx-2">Your Cart</button>
-                <button class="btn btn-warning">Login</button>
+                <a class="nav-item nav-link text-white mx-2" href="index.php">Home</a>
+                <a class="nav-item nav-link text-white mx-2" href="paperbank.php">Paper Bank</a>
+                <a class="nav-item nav-link text-white mx-2" href="about.php">About</a>
+                <a class="nav-item nav-link text-white mx-2" href="all-products.php">All Products</a>
+                <button class="btn btn-warning mx-2" onclick="location.href='cart.php'">Your Cart</button>
+                <button class="btn btn-warning mx-2" onclick="location.href='login.html'">Login</button> <!-- Admin Login Button -->
+                <?php if (isset($_SESSION['user_id'])): ?> <!-- Check if user is logged in -->
+                    <button class="btn btn-warning mx-2" onclick="location.href='user_panel.php'">My Account</button> <!-- My Account Button -->
+                    <button class="btn btn-danger mx-2" onclick="location.href='logout.php'">Logout</button> <!-- Logout Button -->
+                <?php endif; ?>
             </div>
         </nav>
     </header>
@@ -45,19 +54,16 @@
             <div class="carousel-inner">
                 <div class="carousel-item active text-center">
                     <h3>Paper Bank</h3>
-                    <button class="btn btn-primary">View</button>
-                </div>
-                <div class="carousel-item text-center">
-                    <h3>Shop Our Booklets</h3>
-                    <button class="btn btn-primary">View</button>
+                    <button class="btn btn-primary" onclick="window.location.href='paperbank.php'">View</button>
+                    <!-- <button class="btn btn-primary">View</button> -->
                 </div>
                 <div class="carousel-item text-center">
                     <h3>Explore Recent Papers</h3>
-                    <button class="btn btn-primary">View</button>
+                    <button class="btn btn-primary" onclick="window.location.href='papers.php'">View</button>
                 </div>
                 <div class="carousel-item text-center">
                     <h3>Explore Edexcel Curriculum</h3>
-                    <button class="btn btn-primary">View</button>
+                    <button class="btn btn-primary" onclick="window.location.href='https://qualifications.pearson.com/en/about-us/qualification-brands/edexcel.html'">View</button>
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
