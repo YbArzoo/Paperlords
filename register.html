@@ -1,0 +1,28 @@
+<!-- register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="reg-style.css">
+</head>
+<body class="register-page">
+    <div class="register-container">
+        <h2>Register</h2>
+        <form action="register.php" method="POST"> <!-- Action points to register.php -->
+            <div class="input-group">
+                <input type="text" name="name" placeholder="Name" required>
+            </div>
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a></p> <!-- Link to login page -->
+    </div>
+</body>
+</html>

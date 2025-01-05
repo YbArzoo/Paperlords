@@ -251,6 +251,8 @@ footer a {
     font-weight: bold;
 }
 
+
+
 .login-container .input-group {
     margin-bottom: 15px;
 }
@@ -723,7 +725,7 @@ footer a {
 
 /* Product box styles */
         /* Product Box Styling */
-.product-box {
+        .product-box {
             background-color: #ffffff;
             padding: 10px;
             border: 1px solid #ddd;
@@ -787,6 +789,7 @@ footer a {
 .popup.hidden {
             display: none;
 }
+
 .popup-content {
             background-color: #fff;
             border-radius: 10px;
@@ -796,6 +799,7 @@ footer a {
             display: flex;
             flex-wrap: nowrap;
             gap: 20px;
+            position: relative;
 }
 
 .popup-close {
@@ -843,6 +847,43 @@ footer a {
 .add-to-cart-btn:hover {
             background-color: #5d4300;
 }
+.filter-btn {
+    padding: 10px 20px;
+    background-color: #ccad60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.filter-btn:hover {
+    background-color: #5D4300;
+    transform: scale(1.05);
+}
+
+.filter-btn.selected {
+    background-color: #5D4300; /* Darker color for selected state */
+    color: #ffffff; /* Optional: Ensure text contrast */
+}
+
+.reset-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reset-btn:hover {
+    background-color: #d32f2f;
+}
+
+
+
+
 
 
 
@@ -1125,10 +1166,10 @@ footer a {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    /* margin: 20px 0; */
     gap: 20px; /* Reduced gap */
-    margin-right: 100px;
-    margin-left: 40px;
+    /* margin-right: 100px; */
+    margin-left: 110px;
+    margin-right: 90px;
 }
 .cart-details, .summary {
     width: 48%; /* Adjusted width */
@@ -1165,9 +1206,27 @@ footer a {
     color: #5D4300;
 }
 
-.shipping-form{
-    margin-left: 250px;
+.shipping-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Full width for responsiveness */
+
 }
+.shipping-form h2 {
+    color: #402E32;
+}
+.shipping-form .form-group label {
+    font-weight: bold;
+    color: #402E32;
+}
+
+.shipping-form .form-control {
+    border-radius: 5px;
+}
+
 
 /* Buttons */
 .buttons {
@@ -1201,6 +1260,13 @@ footer a {
 }
 
 /* Shipping Details Form */
+.step-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh; /* Ensures vertical centering */
+}
+
 .shipping-details {
     display: flex;
     flex-direction: column;
@@ -1275,6 +1341,28 @@ footer a {
 
 
 
+.payment-option {
+    padding: 10px 20px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #007bff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.payment-option:hover {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.payment-option.active {
+    background-color: #007bff;
+    color: #ffffff;
+    border-color: #0056b3;
+}
 
 
 
