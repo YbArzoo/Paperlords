@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,13 +25,16 @@
         <img src="images/logo.png" alt="Paperlords Logo" height="50">
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="navbar-nav">
-                <a class="nav-item nav-link text-white mx-2" href="index.html">Home</a>
-                <a class="nav-item nav-link text-white mx-2" href="paperbank.html">Paper Bank</a>
-                <a class="nav-item nav-link text-white mx-2" href="about.html">About</a>
-                <a class="nav-item nav-link text-white mx-2" href="shop.html">Shop</a>
-                <a class="nav-item nav-link text-white mx-2" href="all-products.html">All Products</a>
+                <a class="nav-item nav-link text-white mx-2" href="index.php">Home</a>
+                <a class="nav-item nav-link text-white mx-2" href="paperbank.php">Paper Bank</a>
+                <a class="nav-item nav-link text-white mx-2" href="about.php">About</a>
+                <a class="nav-item nav-link text-white mx-2" href="all-products.php">All Products</a>
                 <button class="btn btn-warning mx-2">Your Cart</button>
-                <button class="btn btn-warning">Login</button>
+                <button class="btn btn-warning mx-2" onclick="location.href='login.html'">Login</button> <!-- Admin Login Button -->
+                <?php if (isset($_SESSION['user_id'])): ?> <!-- Check if user is logged in -->
+                    <button class="btn btn-warning mx-2" onclick="location.href='user_panel.php'">My Account</button> <!-- My Account Button -->
+                    <button class="btn btn-danger mx-2" onclick="location.href='logout.php'">Logout</button> <!-- Logout Button -->
+                <?php endif; ?>
             </div>
         </nav>
     </header>
