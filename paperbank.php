@@ -1,3 +1,10 @@
+<?php
+session_start(); // Start the session
+
+// Check if user is logged in
+$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null; // Safely check if user_id is set
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,13 +27,16 @@
         <img src="images/logo.png" alt="Paperlords Logo" height="50">
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="navbar-nav">
-                <a class="nav-item nav-link text-white mx-2" href="index.html">Home</a>
-                <a class="nav-item nav-link text-white mx-2" href="paperbank.html">Paper Bank</a>
-                <a class="nav-item nav-link text-white mx-2" href="about.html">About</a>
-                <a class="nav-item nav-link text-white mx-2" href="shop.html">Shop</a>
-                <a class="nav-item nav-link text-white mx-2" href="all-products.html">All Products</a>
+                <a class="nav-item nav-link text-white mx-2" href="index.php">Home</a>
+                <a class="nav-item nav-link text-white mx-2" href="paperbank.php">Paper Bank</a>
+                <a class="nav-item nav-link text-white mx-2" href="about.php">About</a>
+                <a class="nav-item nav-link text-white mx-2" href="all-products.php">All Products</a>
                 <button class="btn btn-warning mx-2">Your Cart</button>
-                <button class="btn btn-warning">Login</button>
+                <button class="btn btn-warning mx-2" onclick="location.href='login.html'">Login</button> <!-- Admin Login Button -->
+                <?php if (isset($_SESSION['user_id'])): ?> <!-- Check if user is logged in -->
+                    <button class="btn btn-warning mx-2" onclick="location.href='user_panel.php'">My Account</button> <!-- My Account Button -->
+                    <button class="btn btn-danger mx-2" onclick="location.href='logout.php'">Logout</button> <!-- Logout Button -->
+                <?php endif; ?>
             </div>
         </nav>
     </header>
@@ -52,7 +62,7 @@
             <div class="paper-content">
                 <h2>Edexcel IGCSE Papers</h2>
                 <p>Access a wide range of past question papers for Edexcel IGCSE subjects to prepare effectively for your exams.</p>
-                <a href="papers.html" class="btn btn-primary">Explore Now</a>
+                <a href="papers.php" class="btn btn-primary">Explore Now</a>
             </div>
         </div>
 
@@ -64,40 +74,11 @@
             <div class="paper-content">
                 <h2>Edexcel IAL Papers</h2>
                 <p>Find the most recent and comprehensive Edexcel IAL past papers for your academic needs.</p>
-                <a href="papers.html" class="btn btn-primary">Explore Now</a>
-            </div>
-        </div>
-        <!-- Edexcel IGCSE Books Section -->
-        <div class="paper-block">
-            <div class="paper-image">
-                <img src="images/igcse_books.png" alt="Edexcel IGCSE Books">
-            </div>
-            <div class="paper-content">
-                <h2>Edexcel IGCSE Books</h2>
-                <p>Find the most recent and comprehensive Edexcel IGCSE Books for your academic needs.</p>
-                <a href="books.html" class="btn btn-primary">Explore Now</a>
-            </div>
-        </div>
-
-        <!-- Edexcel IAL Books Section -->
-        <div class="paper-block">
-            <div class="paper-image">
-                <img src="images/ial_books.png" alt="Edexcel IAL Books">
-            </div>
-            <div class="paper-content">
-                <h2>Edexcel IAL Books</h2>
-                <p>Find the most recent and comprehensive Edexcel IAL Books for your academic needs.</p>
-                <a href="#" class="btn btn-primary">Explore Now</a>
+                <a href="papers.php" class="btn btn-primary">Explore Now</a>
             </div>
         </div>
 
     </div>
-
-
-
-
-
-
 
 
 
