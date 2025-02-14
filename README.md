@@ -34,7 +34,7 @@ You can check out the demonstration video of the project [here](https://youtu.be
   ![Cart Page](https://github.com/user-attachments/assets/131fd539-2f99-4833-9586-a5257f256037)  
 
 - **Cart Page (Product Added)**  
-  ![Cart with Product](https://github.com/user-attachments/assets/131fd539-2f99-4833-9586-a5257f256037)  
+  ![Cart with Product](https://github.com/user-attachments/assets/398ee5ae-3248-4e1e-aeaf-391acca9c136)  
 
 - **Admin Panel**  
   ![Admin Panel](https://github.com/user-attachments/assets/78f2e5d8-3c1c-4028-b956-145aa91a0eff)  
