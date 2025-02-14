@@ -22,7 +22,7 @@ You can check out the demonstration video of the project [here](https://youtu.be
 ## Screenshots
 
 - **Index Page**  
-  ![Index Page](path/to/screenshot)  
+  ![Index Page](https://github.com/user-attachments/assets/b7fee067-ef9f-45f3-9938-2f0fe17ec101)  
 
 - **Paper Bank Page**  
   ![Paper Bank](path/to/screenshot)  
