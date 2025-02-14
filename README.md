@@ -28,10 +28,10 @@ You can check out the demonstration video of the project [here](https://youtu.be
   ![Paper Bank](https://github.com/user-attachments/assets/db739b3b-524b-46a6-9516-15e02316d488)  
 
 - **All Products Page**  
-  ![All Products]([path/to/screenshot](https://github.com/user-attachments/assets/09a65246-d586-4e9c-a1f1-0c9a9806dbb8))  
+  ![All Products](https://github.com/user-attachments/assets/09a65246-d586-4e9c-a1f1-0c9a9806dbb8)  
 
 - **Cart Page**  
-  ![Cart Page](path/to/screenshot)  
+  ![Cart Page](https://github.com/user-attachments/assets/131fd539-2f99-4833-9586-a5257f256037)  
 
 - **Cart Page (Product Added)**  
   ![Cart with Product](https://github.com/user-attachments/assets/131fd539-2f99-4833-9586-a5257f256037)  
