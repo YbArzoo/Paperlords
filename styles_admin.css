@@ -1,0 +1,94 @@
+/* Sidebar Styling */
+#sidebar {
+    height: 100vh;
+    overflow: hidden;
+    transition: width 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    justify-content: flex-start; /* Default center align */
+    transition: justify-content 0.3s, padding 0.3s;
+}
+
+#sidebar .nav-item .sidebar-text {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #fff;
+    display: inline-block;
+    transition: opacity 0.3s;
+}
+
+#sidebar .nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#sidebar .toggle-btn {
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+#sidebar i {
+    color: #CCAD60;
+    font-size: 20px;
+}
+
+.d-none {
+    display: none !important;
+}
+
+
+/* Main Content */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Light background */
+}
+
+/* Cards Styling */
+.card {
+    border: none; /* Remove border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+.card.bg-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+}
+.card.bg-success {
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+}
+
+/* Table Styling */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+.table-hover tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Expand Button Styling */
+#sidebar .fas.fa-bars {
+    cursor: pointer;
+    color: #f8f9fa;
+    font-size: 20px;
+    transition: transform 0.3s, color 0.3s;
+}
+#sidebar .fas.fa-bars:hover {
+    color: #ffc107; /* Hover color */
+    transform: scale(1.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 80px !important;
+    }
+    #sidebar .sidebar-text {
+        display: none !important;
+    }
+}
