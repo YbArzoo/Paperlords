@@ -67,7 +67,12 @@ $resourcesJson = json_encode($resourcesGrouped, JSON_PRETTY_PRINT);
     </header>
 
     <!-- Hero Section -->
-
+    <section class="hero-papers">
+        <img src="images/past_papers.png" alt="Hero Image" class="hero_papers_image">
+        <div class="hero-text">
+            <h1 id="hero-title">Choose Your Category</h1>
+        </div>
+    </section>
 
     <!-- Selection Section -->
     <section id="selection-section">
