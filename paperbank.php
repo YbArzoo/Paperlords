@@ -89,12 +89,6 @@ $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null; // Safely 
 
 
 
-
-
-
-
-
-
             <!-- Footer -->
     <footer id="main-footer"; class="text-center bg-dark text-white p-3">
                 <a class="text-warning mx-2" href="#">Home</a> |
